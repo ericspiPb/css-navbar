@@ -34,9 +34,6 @@ main {
 }
 
 .navbar {
-  top: 0;
-  width: 5rem;
-  height: 100vh;
   position: fixed;
   background-color: var(--bg-primary);
   transition: width var(--navbar-transition-speed) ease;
@@ -50,14 +47,6 @@ main {
   flex-direction: column;
   align-items: center;
   height: 100%;
-}
-
-.navbar:hover {
-  width: 16rem;
-}
-
-.navbar:hover .nav-link-text {
-  display: block;
 }
 
 .logo {
@@ -130,4 +119,45 @@ main {
 .fa-primary,
 .fa-secondary {
   transition: var(--transition-speed);
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .navbar:hover .nav-link-text {
+    display: inline;
+    transition: opacity var(--transition-speed);
+  }
 }
